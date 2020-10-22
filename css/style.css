@@ -1,7 +1,7 @@
 body{
-    animation: CambioColores 2s linear infinite alternate both;
-    background-size: cover;
-    background-repeat: no-repeat;
+    animation: CambioColores .1s linear infinite alternate both;
+    /*background-size: cover;
+    background-repeat: no-repeat;*/
     background-attachment: fixed;
     max-width: 70%;
     margin: auto;
@@ -21,21 +21,9 @@ body{
 /*Los keyframes son para las animation*/
 @keyframes CambioColores {
     0% {
-        background-color: #33a729; 
-    }
-    20% {
-        background-color: #2f9625;  
-    }
-    40% {
-        background-color: #298521; 
-    }
-    60% {
-        background-color: #24741d; 
-    }
-    80% {
-        background-color: #1f6419; 
+        background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=145c17ff&noise=626262&density=60&opacity=50);
     }
     100%{
-        background-color: #1a5214; 
+        background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=145c17ff&noise=626262&density=100&opacity=50);
     }
 }
