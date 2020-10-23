@@ -26,7 +26,7 @@ function generarApartados() {
         ulCuadrados.className="cuadrados";
         if (index == 0) {
             contenedor1.appendChild(ulCuadrados);
-        } else if (index == 0) {
+        } else if (index == 1) {
             contenedor2.appendChild(ulCuadrados);
         } else {
             contenedor3.appendChild(ulCuadrados);
