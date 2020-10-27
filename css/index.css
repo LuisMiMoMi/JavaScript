@@ -1,0 +1,56 @@
+#divInicial{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    align-content: center;
+    margin: auto;
+    width: 80%;
+    height: 800px;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#contenedor1{
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    width: 30%;
+    height: 80%;
+}
+#contenedor2{
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    width: 30%;
+    height: 80%;
+
+}
+#contenedor3{
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    width: 30%;
+    height: 80%;
+
+}
+#contenido{
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

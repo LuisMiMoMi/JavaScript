@@ -49,7 +49,6 @@ html {
     box-shadow: 1px 1px 50px #000;
     display: none;
   }
-  
   .close-btn{
     position: absolute;
     cursor: pointer;
@@ -76,7 +75,7 @@ html {
   h1{
     font-family: 'Open Sans Condensed', sans-serif;
     position: relative;
-    margin-top: 0px;
+    margin-top: 10px;
     text-align: center;
     font-size: 40px;
     color: #ddd;
@@ -130,49 +129,4 @@ html {
   
   a:hover{
     opacity: 0.7;
-  }
-  
-  #remember-container{
-    position: relative;
-    margin: -5px 20px;
-  }
-  
-  .checkbox {
-    position: relative;
-    cursor: pointer;
-      -webkit-appearance: none;
-      padding: 5px;
-      border-radius: 4px;
-    background: rgba(3,3,3,.2);
-      display: inline-block;
-    width: 16px;
-    height: 15px;
-  }
-  
-  .checkbox:checked:active {
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-  }
-  
-  .checkbox:checked {
-    background: rgba(3,3,3,.4);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.5);
-      color: #fff;
-  }
-  
-  .checkbox:checked:after {
-      content: '\2714';
-      font-size: 10px;
-      position: absolute;
-      top: 0px;
-      left: 4px;
-      color: #fff;
-  }
-  
-  #remember{
-    position: absolute;
-    font-size: 13px;
-    font-family: 'Hind', sans-serif;
-    color: rgba(255,255,255,.5);
-    top: 7px;
-    left: 20px;
   }
