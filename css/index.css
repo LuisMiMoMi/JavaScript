@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     background-color: transparent;
-    align-content: center;
+    align-content: flex-end;
     margin: auto;
     width: 80%;
     height: 800px;

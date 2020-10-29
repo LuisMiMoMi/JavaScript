@@ -2,8 +2,8 @@
     "use strict";
   
     document.addEventListener("DOMContentLoaded", function () {
-        login();
         generarApartados();
+        login();
       });
 })();
 
@@ -35,12 +35,19 @@ function generarApartados() {
   var contenedor1 = document.createElement("div");
   var contenedor2 = document.createElement("div");
   var contenedor3 = document.createElement("div");
+  var contenedorLogin = document.createElement("div");
+    var imagenLogin = document.createElement("img");
   contenedor1.id="contenedor1";
   contenedor2.id="contenedor2";
   contenedor3.id="contenedor3";
+  contenedorLogin.id="login-button";
+    imagenLogin.src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png";
   contenedorInicial.appendChild(contenedor1);
   contenedorInicial.appendChild(contenedor2);
   contenedorInicial.appendChild(contenedor3);
+  contenedorInicial.appendChild(contenedorLogin);
+    contenedorLogin.appendChild(imagenLogin);
+    
 
   
 }
