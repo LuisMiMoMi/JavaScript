@@ -1,37 +1,29 @@
-#divInicial{
-    display: flex;
-    flex-direction: row;
-    background-color: transparent;
-    align-content: flex-end;
-    margin: auto;
-    width: 80%;
-    height: 800px;
-    border-radius: 20px;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
 #contenedor1{
     border-radius: 5px;
-    background: rgba(3,3,3,0.25);
+    background: rgba(3, 3, 3, 0.6);
     box-shadow: 1px 1px 50px #000;
     width: 30%;
-    height: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
 }
 #contenedor2{
     border-radius: 5px;
-    background: rgba(3,3,3,0.25);
+    background: rgba(3, 3, 3, 0.6);
     box-shadow: 1px 1px 50px #000;
     width: 30%;
-    height: 80%;
-
+    height: 70%;
+    display: flex;
+    flex-direction: column;
 }
 #contenedor3{
     border-radius: 5px;
-    background: rgba(3,3,3,0.25);
+    background: rgba(3, 3, 3, 0.6);
     box-shadow: 1px 1px 50px #000;
     width: 30%;
-    height: 80%;
-
+    height: 70%;
+    display: flex;
+    flex-direction: column;
 }
 #contenido{
     border-radius: 5px;
@@ -49,6 +41,44 @@
     background: rgba(3,3,3,0.25);
     box-shadow: 1px 1px 50px #000;
     display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.imagen-login{
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+#placaSolar{
+    margin: auto;
+    width: 40%;
+}
+h2{
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 30px;
+    text-align: center;
+    color: #ddd;
+    text-shadow: 3px 3px 10px #000;
+}
+#contenedor1grande{
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    background: rgba(3,3,3,0.25);
+    box-shadow: 1px 1px 50px #000;
+    display: none;
     flex-direction: row;
     align-content: center;
     justify-content: space-evenly;
