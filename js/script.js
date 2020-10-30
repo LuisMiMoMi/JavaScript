@@ -47,7 +47,4 @@ function generarApartados() {
   contenedorInicial.appendChild(contenedor3);
   contenedorInicial.appendChild(contenedorLogin);
     contenedorLogin.appendChild(imagenLogin);
-    
-
-  
 }
