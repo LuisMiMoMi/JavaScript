@@ -79,10 +79,17 @@ class Usuario {
     this.nombre = nombre;
     this.contraseña = contraseña;
   }
-  get nombre(){
-    return this.nombre;
-  }
+  
 }
+async function validar(){
+    let arrays = await datos();
+    let login = arrays.login();
+}
+async function datos(){
+  let array = {};
+  //await fetch
+}
+
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
