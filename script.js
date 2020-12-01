@@ -1,13 +1,14 @@
+import {generarApartados} from '/views/views.js';
 (() => {
     "use strict";
   
     document.addEventListener("DOMContentLoaded", function () {
         generarApartados();
-        login();
+        eventos();
       });
 })();
 
-function login() {
+function eventos() {
   $('#login-button').click(function(){
     $('#contenido').fadeOut("slow",function(){
       $("#container").fadeIn();
@@ -29,13 +30,18 @@ function login() {
       $("#contenido").fadeIn(800);
     }); 
   });
-  $("#contenedor1").mouseover(function(){
+  $("#contenedor1").click(function(){
     $('#contenido').fadeOut("slow",function(){
       $("#contenedor1grande").fadeIn();
     });
   });
+  $("#flecha").click(function(){
+    $('#contenedor1grande').fadeOut("slow",function(){
+      $("#contenido").fadeIn();
+    });
+  });
 }
-function generarApartados() {
+/*function generarApartados() {
   let body = document.getElementsByTagName("body")[0];
   let contenedorInicial = document.createElement("div");
   let contenedor1 = document.createElement("div");
@@ -67,7 +73,7 @@ function generarApartados() {
   contenedorInicial.appendChild(contenedor3);
   contenedorInicial.appendChild(contenedorLogin);
     contenedorLogin.appendChild(imagenLogin);
-}
+}*/
 class Usuario {
   constructor(nombre, contraseña) {
     this.nombre = nombre;

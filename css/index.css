@@ -63,6 +63,12 @@ h2{
     color: #ddd;
     text-shadow: 3px 3px 10px #000;
 }
+#flecha{
+    position: relative;
+    width: 50px;
+    left: 10px;
+    top: 10px;
+}
 #contenedor1grande{
     border-radius: 5px;
     background: rgba(3,3,3,0.25);
