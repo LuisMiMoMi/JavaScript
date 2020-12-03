@@ -1,5 +1,6 @@
 {
     "usuarios":[
-        {"nombre": "Luis", "email": "luis@gmail.com", "contraseña": "luis"}
+        {"nombre": "Luis", "email": "luis@gmail.com", "contraseña": "luis"},
+        {"nombre": "Pipo", "email": "pipo@gmail.com", "contraseña": "pipo"}
     ]
 }

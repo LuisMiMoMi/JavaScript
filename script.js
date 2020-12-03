@@ -1,14 +1,15 @@
-import {generarApartados} from '/views/views.js';
+import {Generador} from '/views/views.js';
 (() => {
     "use strict";
   
     document.addEventListener("DOMContentLoaded", function () {
-        generarApartados();
-        eventos();
+        let generador = new Generador();
+        generador.main();
+        eventos(generador);
       });
 })();
 
-function eventos() {
+function eventos(generador) {
   $('#login-button').click(function(){
     $('#contenido').fadeOut("slow",function(){
       $("#container").fadeIn();
@@ -24,21 +25,26 @@ function eventos() {
     });
   });
   $("a[href^=\"#\"]").click(function () {
-    TweenMax.from("#container", .4, { scale: 1, ease:Sine.easeInOut});
-    TweenMax.to("#container", .4, { left:"0px", scale: 0, ease:Sine.easeInOut});
-    $("#container").fadeOut(800, function(){
-      $("#contenido").fadeIn(800);
-    }); 
-  });
-  $("#contenedor1").click(function(){
-    $('#contenido').fadeOut("slow",function(){
-      $("#contenedor1grande").fadeIn();
-    });
-  });
-  $("#flecha").click(function(){
-    $('#contenedor1grande').fadeOut("slow",function(){
-      $("#contenido").fadeIn();
-    });
+    validar().then(response => {
+      if (response) {
+        TweenMax.from("#container", .4, { scale: 1, ease:Sine.easeInOut});
+        TweenMax.to("#container", .4, { left:"0px", scale: 0, ease:Sine.easeInOut});
+        $("#container").fadeOut(800, function(){
+          generador.main2();
+        $("#contenido").fadeIn(800);
+        });
+      } else {
+        TweenMax.from("#container", .4, { scale: 1, ease:Sine.easeInOut});
+        TweenMax.to("#container", .4, { left:"0px", scale: 0, ease:Sine.easeInOut});
+        $("#container").fadeOut(800, function(){
+        $("#contenido").fadeIn(800);
+        });
+      }
+      
+    }
+    );
+    
+     
   });
 }
 /*function generarApartados() {
@@ -74,6 +80,7 @@ function eventos() {
   contenedorInicial.appendChild(contenedorLogin);
     contenedorLogin.appendChild(imagenLogin);
 }*/
+
 class Usuario {
   constructor(nombre, contraseña) {
     this.nombre = nombre;
@@ -83,11 +90,24 @@ class Usuario {
 }
 async function validar(){
     let arrays = await datos();
-    let login = arrays.login();
+    let login = arrays.usuarios;
+
+    let bool = false;
+    let email = document.getElementById("mail").value;
+    let password = document.getElementById("contra").value;
+    login.forEach(element => {
+        if (email == element.email && password == element.contraseña) {
+          bool = true;
+        }
+    });
+    return bool;
 }
 async function datos(){
   let array = {};
-  //await fetch
+  await fetch("../json/usuarios.json")
+  .then(response => response.json())
+  .then(dato => array = dato)
+  return array;
 }
 
 function setCookie(cname, cvalue, exdays) {
