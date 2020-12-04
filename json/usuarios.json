@@ -1,6 +1,16 @@
 {
     "usuarios":[
-        {"nombre": "Luis", "email": "luis@gmail.com", "contraseña": "luis"},
-        {"nombre": "Pipo", "email": "pipo@gmail.com", "contraseña": "pipo"}
+       {
+          "nombre":"Luis Miguel Montell Mira",
+          "email":"luis@gmail.com",
+          "contraseña":"luis",
+          "perfil":"../img/LuisMiguel.png"
+       },
+       {
+          "nombre":"Jose Castillo",
+          "email":"josecastillo@gmail.com",
+          "contraseña":"josecastillo",
+          "perfil":"../img/JoseCastillo.png"
+       }
     ]
 }

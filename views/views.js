@@ -29,7 +29,7 @@ class Generador{
     
         contenedorLogin.id="login-button";
             imagenLogin.src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png";
-            imagenLogin.className="imagen-login";
+            imagenLogin.id="imagen-login";
     
         body.appendChild(contenedorInicial);
     
@@ -49,9 +49,13 @@ class Generador{
         let contenedor1grande = document.createElement("div");
             let imagenFlecha = document.createElement("img");
 
+        let imagenLogin = document.getElementById("imagen-login");
+
         contenedor1grande.id="contenedor1grande";
             imagenFlecha.src="../img/flecha.png";
             imagenFlecha.id="flecha";
+
+        imagenLogin.src="";
 
         body.appendChild(contenedor1grande);
 
