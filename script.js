@@ -5,13 +5,13 @@ export {Galletas};
     "use strict";
   
     document.addEventListener("DOMContentLoaded", function () {
-        let generador = new Generador();
+        const generador = new Generador();
         generador.main();
         eventos(generador);
       });
 })();
 
-function eventos(generador) {
+const eventos = function (generador) {
   $('#login-button').click(function(){
     $('#contenido').fadeOut("slow",function(){
       $("#container").fadeIn();
@@ -79,7 +79,7 @@ class Galletas {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    document.cookie = `${cname} = ${cvalue}; ${expires}; path=/`;//template literal
   }
   static deleteCookie(){
     let galleta = Galletas.getCookie("username");

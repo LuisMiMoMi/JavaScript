@@ -28,8 +28,12 @@ class Generador{
             let divCont2 = document.createElement("div");
             let textoCont2 = document.createTextNode("La corriente de agua, que puede ser modulada por las compuertas de una presa situada en un río, empuja las cuchillas de una turbina y la hace girar.\nEse movimiento hace que un generador produzca electricidad.\nLa cantidad de energía que produce puede ser regulada según la altura desde la que caiga el agua o el caudal de la misma.");
         let contenedor3 = document.createElement("div");
-    
-        let contenedorLogin = document.createElement("div");
+            let h2Cont3 = document.createElement("h2");
+            let tituloCont3 = document.createTextNode("Servicio de energía eólica");
+            let divCont3 = document.createElement("div");
+            let textoCont3 = document.createTextNode("La energía eólica es la energía que se obtiene del viento. Se trata de un tipo de energía cinética producida por el efecto de las corrientes de aire. Esta energía la podemos convertir en electricidad a través de un generador eléctrico. Es una energía renovable, limpia, que no contamina y que ayuda a reemplazar la energía producida a través de los combustibles fósiles.");
+
+            let contenedorLogin = document.createElement("div");
             let imagenLogin = document.createElement("img");
     
         contenedorInicial.id="contenido";
@@ -40,6 +44,7 @@ class Generador{
         contenedor2.id="contenedor2";
             divCont2.id="info";
         contenedor3.id="contenedor3";
+            divCont3.id="info";
     
         contenedorLogin.id="login-button";
             imagenLogin.src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png";
@@ -58,6 +63,10 @@ class Generador{
             contenedor2.appendChild(divCont2);
                 divCont2.appendChild(textoCont2);
         contenedorInicial.appendChild(contenedor3);
+            contenedor3.appendChild(h2Cont3);
+                h2Cont3.appendChild(tituloCont3);
+            contenedor3.appendChild(divCont3);
+                divCont3.appendChild(textoCont3);
         contenedorInicial.appendChild(contenedorLogin);
             contenedorLogin.appendChild(imagenLogin);
     }
@@ -68,8 +77,10 @@ class Generador{
         let contenedor1grande = document.createElement("div");
             let imagenFlecha = document.createElement("img");
 
+        let [nombreUsu, perfilUsu] = [usuarioClass.nombre,usuarioClass.perfil];
+
         let imagenLogin = document.getElementById("imagen-login");
-        let datosNombre = document.createTextNode(usuarioClass.nombre);
+        let datosNombre = document.createTextNode(nombreUsu);
         let datosCerrarSesion = document.createTextNode("Cerrar sesión");
         let contenedorInicial = document.getElementById("contenido");
         let divNombreLogin = document.createElement("div");
@@ -82,7 +93,7 @@ class Generador{
             imagenFlecha.src="../img/flecha.png";
             imagenFlecha.id="flecha";
 
-        imagenLogin.src=usuarioClass.perfil;
+        imagenLogin.src=perfilUsu;
 
         body.appendChild(contenedor1grande);
 
