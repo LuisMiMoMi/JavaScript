@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
 }
-#contenedor1:hover, #contenedor2:hover , #contenedor3:hover {
+#contenedor1:hover{
     background: rgba(3, 3, 3, 0.7);
     cursor: pointer;
 }
@@ -41,6 +41,11 @@
 #placaSolar{
     margin: auto;
     width: 40%;
+}
+#info{
+    margin: 30px;
+    color: white;
+    line-height: 30px;
 }
 h2{
     font-family: 'Open Sans Condensed', sans-serif;

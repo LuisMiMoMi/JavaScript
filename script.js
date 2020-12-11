@@ -1,5 +1,6 @@
 import {Generador} from '/views/views.js';
 import {Usuario} from '/model/usuarios.js';
+export {Galletas};
 (() => {
     "use strict";
   
@@ -31,7 +32,7 @@ function eventos(generador) {
         TweenMax.from("#container", .4, { scale: 1, ease:Sine.easeInOut});
         TweenMax.to("#container", .4, { left:"0px", scale: 0, ease:Sine.easeInOut});
         $("#container").fadeOut(800, function(){
-          generador.main2();
+          generador.main2(usuarioClass);
         $("#contenido").fadeIn(800);
         });
       } else {
@@ -60,6 +61,7 @@ async function validar(){
     for (const element of usuarioObject) {
       if (email == element.email && password == element.contraseña) {
         usuarioClass = Object.assign(new Usuario, element);
+        Galletas.setCookie("username", element.nombre, 7);
         bool = true;
       }
     }
@@ -72,37 +74,46 @@ async function datos(){
   .then(dato => array = dato);
   return array;
 }
-
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  var expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+class Galletas {
+  static setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  static deleteCookie(){
+    let galleta = Galletas.getCookie("username");
+    galleta = document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    let generador = new Generador();
+    generador.main();
+    eventos(generador);
+  }
+  static getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  static checkCookie() {
+    var user = getCookie("username");
+    if (user != "") {
+      alert("Welcome again " + user);
+    } else {
+      user = prompt("Please enter your name:", "");
+      if (user != "" && user != null) {
+        setCookie("username", user, 365);
+      }
+    }
+  } 
 }
 
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
-function checkCookie() {
-  var user = getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
-  } else {
-    user = prompt("Please enter your name:", "");
-    if (user != "" && user != null) {
-      setCookie("username", user, 365);
-    }
-  }
-} 
+

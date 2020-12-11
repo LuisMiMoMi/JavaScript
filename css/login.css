@@ -24,7 +24,23 @@ html {
     box-shadow: 10px 10px 30px #000;}
   
   #login-button:hover{
-    opacity: 0.5;}
+    opacity: 0.5;
+  }
+  #login-nombre{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 100px;
+    height: 20px;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    color: white;
+  }
+  #cerrarSesion:hover{
+    color: aqua;
+    cursor: pointer;
+  }
 
   /* Login container */
   #container{
