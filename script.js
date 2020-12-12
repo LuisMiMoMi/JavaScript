@@ -1,5 +1,5 @@
-import {Generador} from '/views/views.js';
-import {Usuario} from '/model/usuarios.js';
+import {Generador} from './views/views.js';
+import {Usuario} from './model/usuarios.js';
 export {Galletas};
 (() => { //función autoinvocada y funcion flecha
     "use strict"; //use strict
