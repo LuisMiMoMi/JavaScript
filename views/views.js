@@ -1,19 +1,21 @@
 export{Generador};
 import{Galletas} from '../script.js';
-class Generador{
-    main() {
-        let body = document.getElementsByTagName("body")[0];
+class Generador{ //clases
+    main() { //funciones main y main 2
+        let body = document.getElementsByTagName("body")[0]; 
+        //template literal
         body.innerHTML = `<div id="container">
         <h1>Registro</h1>
         <span class="close-btn">
           <img id="imagen-x" src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
         </span>
-        <form>
+        <form id="elementoForm">
           <input type="email" name="email" id="mail" placeholder="E-mail">
           <input type="password" name="pass" id="contra" placeholder="Contraseña">
           <a class="login" href="#">Inicia sesión</a>
-      </form>
-      </div>`;
+        </form>
+        </div>`;
+        //creación de nodos
         let contenedorInicial = document.createElement("div");
     
         let contenedor1 = document.createElement("div");
@@ -71,18 +73,39 @@ class Generador{
             contenedorLogin.appendChild(imagenLogin);
     }
     
-    main2(usuarioClass) {
+    main2(usuarioClass) {         
+        //selector
         let body = document.getElementsByTagName("body")[0];
 
+        let [nombreUsu, perfilUsu, tablaUsu] = [usuarioClass.nombre,usuarioClass.perfil, usuarioClass.tabla]; //destructuring
+
         let contenedor1grande = document.createElement("div");
+        let contenedorFlex = document. createElement("div");
+            let contenedor4 = document.createElement("div");
+            let contenedor5 = document.createElement("div");
+            let chart = document.createElement("div");
             let imagenFlecha = document.createElement("img");
-
-        let [nombreUsu, perfilUsu] = [usuarioClass.nombre,usuarioClass.perfil];
-
-        let imagenLogin = document.getElementById("imagen-login");
+        //template literal
+        let textoCont4 = `<table id="tablaDatos">`;
+        for (let i = 0; i < tablaUsu.length; i++) {
+            textoCont4 += `<tr>`;
+            for (let j = 0; j < tablaUsu[i].length; j++) {
+                if (i==0) {
+                    textoCont4 += `<th>${tablaUsu[i][j]}</th>`;
+                }else{
+                    textoCont4 += `<td>${tablaUsu[i][j]}</td>`;
+                }
+                    
+            }
+            textoCont4 += `</tr>`;
+        }
+        textoCont4 += `</table>`;
+        
+        //selector con querySelector y creación de nodos
+        let imagenLogin = document.querySelector("#imagen-login");
         let datosNombre = document.createTextNode(nombreUsu);
         let datosCerrarSesion = document.createTextNode("Cerrar sesión");
-        let contenedorInicial = document.getElementById("contenido");
+        let contenedorInicial = document.getElementById("contenido");//selector
         let divNombreLogin = document.createElement("div");
         let nombreLogin = document.createElement("label");
         let cerrarSesion = document.createElement("label")
@@ -91,20 +114,31 @@ class Generador{
 
         contenedor1grande.id="contenedor1grande";
             imagenFlecha.src="../img/flecha.png";
-            imagenFlecha.id="flecha";
+            imagenFlecha.id="flecha";    
+            contenedorFlex.id="contenedorFlex";
+                contenedor4.id="contenedor4";
+                contenedor5.id="contenedor5";
+                    chart.id="curve_chart";
 
         imagenLogin.src=perfilUsu;
 
         body.appendChild(contenedor1grande);
+
 
         contenedorInicial.appendChild(divNombreLogin);
             divNombreLogin.appendChild(nombreLogin);
                 nombreLogin.appendChild(datosNombre);
             divNombreLogin.appendChild(cerrarSesion);
                 cerrarSesion.appendChild(datosCerrarSesion);
-                cerrarSesion.addEventListener('click', Galletas.deleteCookie);
+                cerrarSesion.addEventListener('click', Galletas.deleteCookie);//registro de eventos
 
+        contenedor1grande.appendChild(contenedorFlex);
         contenedor1grande.appendChild(imagenFlecha);
+            contenedorFlex.appendChild(contenedor4);
+                contenedor4.innerHTML = textoCont4;
+            contenedorFlex.appendChild(contenedor5);
+                contenedor5.appendChild(chart);
+
     
         //eventos logeado
         $("#contenedor1").click(function(){
@@ -117,5 +151,22 @@ class Generador{
               $("#contenido").fadeIn();
             });
         });
+
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(tablaUsu);
+
+            var options = {
+                title: 'Productividad de las placas solares',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
     }
 }
