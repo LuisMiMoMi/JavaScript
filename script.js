@@ -73,7 +73,7 @@ async function validar(){ //Declaración de función y validación de formulario
 }
 async function datos(){
   let array = {};
-  await fetch("../json/usuarios.json") //fetch y promesa
+  await fetch("./json/usuarios.json") //fetch y promesa
   .then(response => response.json())//funcion flecha y JSON
   .then(dato => array = dato);
   return array;
