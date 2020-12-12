@@ -113,7 +113,7 @@ class Generador{ //clases
             cerrarSesion.id = "cerrarSesion";
 
         contenedor1grande.id="contenedor1grande";
-            imagenFlecha.src="../img/flecha.png";
+            imagenFlecha.src="./../img/flecha.png";
             imagenFlecha.id="flecha";    
             contenedorFlex.id="contenedorFlex";
                 contenedor4.id="contenedor4";
