@@ -4,7 +4,7 @@
           "nombre":"Luis Miguel Montell Mira",
           "email":"luis@gmail.com",
           "contraseña":"luis",
-          "perfil":"./../img/LuisMiguel.png",
+          "perfil":"./img/LuisMiguel.png",
           "tabla": [
                ["Hora", "Consumo", "Producción"], 
                ["8",  600,      700],
@@ -26,7 +26,7 @@
           "nombre":"Jose Castillo",
           "email":"josecastillo@gmail.com",
           "contraseña":"josecastillo",
-          "perfil":"./../img/JoseCastillo.png",
+          "perfil":"./img/JoseCastillo.png",
           "tabla": [
             ["Hora", "Consumo", "Producción"], 
             ["8",  500,      600],
